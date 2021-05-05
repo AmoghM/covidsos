@@ -17,12 +17,9 @@ words = set(nltk.corpus.words.words())
 #          if w.lower() in words or not w.isalpha())
 #     return tweet
 
-import datetime
-print(" ==== TWEET EXTRACTION IN PROCESS ===")
-startDate = datetime.datetime(2021, 5, 4, 0, 0, 0)
-endDate =   datetime.datetime(2012, 5, 5, 1, 50, 0)
 
-tweet_dump = tweet_extraction.get_tweets(search_words = "#pondiamoghkishangiri",#COVID19India", 
+print(" ==== TWEET EXTRACTION IN PROCESS ===")
+tweet_dump = tweet_extraction.get_tweets(search_words = "#COVID19India", 
                                         date_since = "2021-05-04",
                                         size = 5)
 # text = 'New Delhi is having a lot of cases. Help needed.'
