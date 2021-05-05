@@ -17,9 +17,12 @@ words = set(nltk.corpus.words.words())
 #          if w.lower() in words or not w.isalpha())
 #     return tweet
 
-
+import datetime
 print(" ==== TWEET EXTRACTION IN PROCESS ===")
-tweet_dump = tweet_extraction.get_tweets(search_words = "#COVID19India", 
+startDate = datetime.datetime(2021, 5, 4, 0, 0, 0)
+endDate =   datetime.datetime(2012, 5, 5, 1, 50, 0)
+
+tweet_dump = tweet_extraction.get_tweets(search_words = "#pondiamoghkishangiri",#COVID19India", 
                                         date_since = "2021-05-04",
                                         size = 5)
 # text = 'New Delhi is having a lot of cases. Help needed.'
@@ -31,13 +34,13 @@ for i in tweet_dump:
 
 
 print(tweet_dump)
-print("\n")
-print(text_dump)
+# print("\n")
+# print(text_dump)
 
-print(" ==== TAGGING IN PROCESS ===")
-for text in text_dump:
-    classified_text = ner.get_ner(text)
-    print(classified_text)
-    for i in classified_text:
-        if i[1] == 'LOCATION':
-            print(i[0])
+# print(" ==== TAGGING IN PROCESS ===")
+# for text in text_dump:
+#     classified_text = ner.get_ner(text)
+#     print(classified_text)
+#     for i in classified_text:
+#         if i[1] == 'LOCATION':
+#             print(i[0])
